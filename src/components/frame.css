@@ -1,0 +1,98 @@
+.frame{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.state{
+    position: fixed;
+    top: 1vw;
+    left: 1vw;
+    font-size: 1vw;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 .2vw #000000;
+    color: #00ff00;
+    z-index: 1000;
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0% {
+       opacity: .3;
+   }
+   100% {
+    opacity: 1;
+   }
+} 
+
+.frame .original{
+    position: fixed;
+    top: 1vw;
+    right: 1vw; 
+    z-index: 1000;
+}
+
+.frame .original img{
+    width: 8vw;
+    height: auto;
+    display: block;
+    border: 3px solid #00ff00;
+}
+
+
+.frame .background{
+    width: 100%;
+    height: 100%;
+    left: -200%;
+}
+
+.frame .background img{
+    opacity: 1;
+    animation: bounce 15s alternate infinite;
+}
+
+.frame .background img.appear{
+    opacity: 0;
+    animation: bounce 15s alternate infinite, fadeIn 10s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes bounce {
+     0% {
+        width: 1000%;
+        height: 110%;
+        transform: translateY(-20px) translateX(0px);
+    }
+    100% {
+        width: 1100%;
+        height: 115%;
+        transform: translateY(-20px) translateX(-100px);
+    }
+} 
+
+
+
+.frame figcaption{
+    position: absolute;
+    bottom: 4vw;
+    font-size: 1.5vw;
+    width: 60%;
+    left: 20%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00ff00;
+    line-height: 1.25;
+    letter-spacing: .03em;
+    text-shadow: 0 0 .2vw #000000;
+    text-align: center;
+}
